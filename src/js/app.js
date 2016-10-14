@@ -109,9 +109,8 @@ var viewModel = (function() {
 	// Google map API error handling
 	function mapError(){
 		alert("Sorry, there was a problem loading the google map. Please try again later.");
-		// console.log("Error: " + thrownError);
 	}
-
+	
 	// This is the list-view and map marker filter
 	var newList = ko.computed(function() {
 		if (selectedOption() === "All Types of Places") {

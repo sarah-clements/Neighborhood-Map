@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/sarah-clements/Neighborhood-Map#readme",
   "devDependencies": {
-    "grunt": "^1.0.1", 
+    "grunt": "^1.0.1",
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-htmlmin": "^2.0.0",
-    "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
+    "grunt-imageoptim": "^1.4.1"
   }
 }

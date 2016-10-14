@@ -6,8 +6,8 @@ module.exports = function(grunt) {
 	uglify: {
 		build: {
 			files: {
-		   'dist/js/app.js': 'src/js/app.js',
-		   'dist/js/jquery.js': 'src/js/jquery.js'
+		   'dist/js/app.js': 'src/js/app.js'
+		   // 'dist/js/jquery.js': 'src/js/jquery.js'
 		   
 			}
 		 }
@@ -40,12 +40,11 @@ module.exports = function(grunt) {
 		}
 	 }
   });
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['uglify', 'htmlmin', 'imageoptim', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'htmlmin', 'cssmin']);
 };
 
 
