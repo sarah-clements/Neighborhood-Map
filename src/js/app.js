@@ -120,7 +120,7 @@ var viewModel = (function() {
 		}
 	});
 
-	// Starts map marker animation on-click
+	// Starts map marker animation on-click; got the idea for this on stack overflow: http://stackoverflow.com/questions/14657779/google-maps-bounce-animation-on-marker-for-a-limited-period
 	function startAnimation(marker) {
 		marker.setAnimation(google.maps.Animation.BOUNCE);
 		stopAnimation(marker);
