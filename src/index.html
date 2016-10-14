@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Welcome to San Francisco</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class="nav" class="row">
+		<nav class="col-4">
+			<span class="entypo-menu" data-bind="click: toggle"></span>
+			<div id="list-view" class="style" data-bind="visible: toggleOpen" class="nav-open">
+				<p><select id="styleSelect" data-bind="options: dropDown, value: selectedOption"></select></p>
+				<ul data-bind="foreach: newList">
+					<li>
+						<p class="nav-item" data-bind="text: title, click: $root.listViewDisplay"></p>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<section>
+		<div class="row">
+			<header class="col-12">
+				<h1>Get to know San Francisco's <span id="mission">Mission District</span></h1>
+				<h2>Click a marker to start exploring</h2>
+			</header>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<div id="list-view" class="style">
+					<p><select id="styleSelect" data-bind="options: dropDown, value: selectedOption"></select></p>
+					<ul data-bind="foreach: newList">
+						<li>
+							<p class="nav-item" data-bind="text: title, click: $root.listViewDisplay"></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-5">
+				<div id="map-container" class="style">
+					<div id="map"></div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div id="flickr-gallery" class="style">
+					<img id="responsive-image" data-bind="visible: photoUrl, attr: {src: photoUrl}" class="responsive-image">
+					<h3 data-bind="text: rightBoxName"></h3>
+					<p data-bind="visible: defaultIntro, text: defaultIntro"></p>
+					<h4 data-bind="text: rightBoxCategory"></h4>
+					<a data-bind="visible: rightBoxUrl, text: rightBoxUrl, attr: {href: rightBoxUrl, title: rightBoxUrl}"></a>
+					<p data-bind="text: rightBoxAddress"></p>
+					<p data-bind="text: rightBoxPhone"></p>
+					<p data-bind="text: rightBoxHours"></p>
+					<p data-bind="visible: rightBoxRating">Foursquare users rating <span class="bolded" data-bind="text: rightBoxRating"></span></p>
+					<p data-bind="text: rightBoxTips"></p>
+					<a data-bind="visible: attributionLink, attr: {href: attributionLink}"><em>More details..</em></a>
+					<p id="foursquare-attribution" data-bind="visible: rightBoxName">Powered by Foursquare</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type='text/javascript' src='js/knockout.js'></script>
+	<script type="text/javascript" src="js/google-maps-data.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-pAj10zAPq_-Moey6_uJWaP-Kre59fbY&v=3&callback=viewModel.initMap"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
