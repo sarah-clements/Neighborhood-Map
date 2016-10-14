@@ -15,6 +15,7 @@
     max-width: 1200px;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 .col-1 {
     width: 8.33%;
@@ -61,9 +62,7 @@
 .col-12 {
     width: 100%;
 }
-.nav {
-    display: none;
-}
+
 body {
     font: 1em Arial, sans-serif;
     height: 100%;
@@ -87,7 +86,7 @@ h2 {
 }
 h3 {
     font: 400 1.2em Montserrat, sans-serif;
-    margin-left: 20px;
+    margin-left: 10px;
     color: #4F5152;
 }
 h4 {
@@ -102,7 +101,7 @@ a,
 p {
     text-decoration: none;
     color: #4F5152;
-    margin: 20px;
+    margin: 10px;
     word-wrap: break-word;
 }
 ul {
@@ -151,10 +150,41 @@ ul {
     max-width: 100%;
     vertical-align: bottom;
 }
+
+.nav {
+    width: 100%;
+    display: none;
+    position: relative;
+    z-index: 3;
+    background-color: #7DCDCD;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    width: 250px;
+    z-index: 2;
+    margin-bottom: 20px;
+    background-color: #7DCDCD;
+    border: 2px solid #7DCDCD;
+    border-top: 0;
+    border-radius: 7px;
+}
+
+#navSelect {
+
+    background-color: #7DCDCD;
+    font: 1em Arial, sans-serif;
+    margin-left: 0px;
+    padding-left: 0;
+    color: #4F5152;
+    width: 90%;
+}
+
 @media (min-width: 0px) and (max-width: 500px) {
     body,
     #styleSelect {
-        font-size: .8em;
+        font-size: .9em;
     }
     h1 {
         font-size: 1.5em;
@@ -180,13 +210,13 @@ ul {
     #map {
         height: 500px;
     }
-    .nav {
-        margin-bottom: 0;
+    .nav, .nav-menu {
         display: block;
     }
     .entypo-menu {
         color: #4F5152;
         font-size: 35px;
+        margin-left: 10px;
     }
 }
 @media (min-width: 501px) and (max-width: 949px) {

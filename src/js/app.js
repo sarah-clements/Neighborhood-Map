@@ -33,7 +33,7 @@ var viewModel = (function() {
 	var dropDown = ko.observableArray(["All Types of Places", "Points of Interest", "Historical Places", "Cafe's and Bakeries", "Art Galleries", "Book Stores", "Music and Movies", "Restaurants and Bars"]);
 
 	// Map style is "Blue Essence" by sairam at https://snazzymaps.com/style/11517/blue-essence
-	var initMap = function() {
+	function initMap() {
 		var styledMapType = new google.maps.StyledMapType(
 			[{
 				"featureType": "landscape.natural",
@@ -104,6 +104,12 @@ var viewModel = (function() {
 		for (var i = 0; i < locations.length; i++) {
 			viewModel.makeMarkers(i);
 		}
+	}
+
+	// Google map API error handling
+	function mapError(){
+		alert("Sorry, there was a problem loading the google map. Please try again later.");
+		// console.log("Error: " + thrownError);
 	}
 
 	// This is the list-view and map marker filter
@@ -195,6 +201,9 @@ var viewModel = (function() {
 			$.getJSON(venueUrl, function(data) {
 				marker.venue = data.response.venue;
 				dataDisplay(marker);
+			}).fail(function(thrownError) {
+					alert("Sorry, there was a problem loading data for this location. Please try again later.");
+					console.log("Error: " + thrownError);
 			});
 		} else {
 			dataDisplay(marker);
@@ -203,7 +212,6 @@ var viewModel = (function() {
 
 	// Loads data in right box panel when list item is clicked in the list view
 	function listViewDisplay(marker) {
-		x = 0;
 		toggleOpen(false);
 		fourSquareDataLoad(marker);
 		startAnimation(marker);
@@ -237,23 +245,15 @@ var viewModel = (function() {
 					markers()[i].id = data.response.venues[0].id;
 				}
 			}
+		}).fail(function(thrownError) {
+			alert("Sorry, there was a problem loading the markers. Please try again later.");
+			console.log("Error: " + thrownError);
 		});
 	}
 
-	// Checks for errors with ajax calls
-	$(document).ajaxError(function(event, jqxhr, thrownError) {
-		alert("Sorry, there was a problem. Please try again later.");
-		console.log("Error: " + errorThrown);
-	});
-
 	// Opens & closes mobile menu
 	function toggle() {
-		++x;
-		if (x % 2) {
-			toggleOpen(true);
-		} else {
-			toggleOpen(false);
-		}
+		toggleOpen(!toggleOpen());
 	}
 
 	return {
@@ -281,7 +281,8 @@ var viewModel = (function() {
 		listViewDisplay: listViewDisplay,
 		attributionLink: attributionLink,
 		toggle: toggle,
-		toggleOpen: toggleOpen
+		toggleOpen: toggleOpen,
+		mapError: mapError
 	};
 })();
 
