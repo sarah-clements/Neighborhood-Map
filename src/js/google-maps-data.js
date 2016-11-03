@@ -69,3 +69,4 @@ var locations = [{
         "location": {
             "lat": 37.759045, "lng": -122.421538 }
     }];
+

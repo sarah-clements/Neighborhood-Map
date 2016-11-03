@@ -162,18 +162,20 @@ ul {
 .nav-menu {
     display: none;
     position: absolute;
-    width: 250px;
+    width: 230px;
     z-index: 2;
     margin-bottom: 20px;
-    background-color: #7DCDCD;
-    border: 2px solid #7DCDCD;
-    border-top: 0;
+    background-color: #EDEDED;
+    /*border: 3px solid #EDEDED;*/
     border-radius: 7px;
+    box-shadow: 3px 3px 3px #4F5152; 
+    -moz-box-shadow: 5px 5px 5px #4F5152;
+    -webkit-box-shadow: 5px 5px 5px #4F5152;
 }
 
 #navSelect {
 
-    background-color: #7DCDCD;
+    background-color: #EDEDED;
     font: 1em Arial, sans-serif;
     margin-left: 0px;
     padding-left: 0;
