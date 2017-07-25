@@ -92,13 +92,14 @@ var viewModel = (function() {
 	var rightBoxHours = ko.observable();
 	var attributionLink = ko.observable();
 	var toggleOpen = ko.observable(false);
-	// This photo was taken by me
-	var photoUrl = ko.observable("./img/Mission-dolores-basilica.jpg");
+	//Photo copyright 2016 by Yu-Jen Shih at https://www.flickr.com/photos/mcdyessjin/27896767601/
+	//creative-commons Attribution-NonCommercial 2.0 license https://creativecommons.org/licenses/by-nc/2.0/
+	var photoUrl = ko.observable("./img/valencia_street.jpg");
 	var selectedOption = ko.observable();
 	// This paragraph was written by me
 	var defaultIntro = ko.observable("The Mission District - named for the Mission Dolores founded in 1776 - is San Francisco’s oldest neighborhood." +
 		" Home to a vibrant hispanic community, it boasts the largest concentration of murals in the city. Valencia street is the epicentre of " +
-		"gentrification, with hot new restaurants, boutiques, and cafe's rubbing shoulders with local favorites that have stood the test of time.");
+		"gentrification, with hot new restaurants, boutiques, and cafe's rubbing shoulders with local favorites.");
 
 	// This is the drop-down menu array
 	var dropDown = ko.observableArray(["All Types of Places", "Points of Interest", "Historical Places", "Cafe's and Bakeries", "Art Galleries", "Book Stores", "Music and Movies", "Restaurants and Bars"]);

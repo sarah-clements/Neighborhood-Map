@@ -6,9 +6,7 @@ module.exports = function(grunt) {
 	uglify: {
 		build: {
 			files: {
-		   'dist/js/app.js': 'src/js/app.js'
-		   // 'dist/js/jquery.js': 'src/js/jquery.js'
-		   
+		   'dist/js/app.js': 'src/js/app.js'		   
 			}
 		 }
 	},
@@ -25,7 +23,7 @@ module.exports = function(grunt) {
 	},
 	imageoptim: {
 	  build: {
-	    src: ['dist/img', 'dist/img']
+	    src: ['src/img', 'dist/img']
 		}
 	  },
 	htmlmin: {                                     
@@ -44,7 +42,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['uglify', 'htmlmin', 'cssmin']);
+  grunt.registerTask('default', ['uglify', 'htmlmin', 'cssmin', 'imageoptim']);
 };
 
 
